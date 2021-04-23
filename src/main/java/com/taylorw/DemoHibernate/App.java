@@ -247,7 +247,7 @@ public class App
     }
     
     public static <T> List<T> castList(Class<? extends T> clazz, Collection<?> rawCollection) {
-        List<T> result = new ArrayList<>(rawCollection.size());
+        List<T> result = new ArrayList<T>(rawCollection.size());
         for (Object o : rawCollection) {
             try {
                 result.add(clazz.cast(o));
@@ -276,7 +276,7 @@ public class App
 	{
 		System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName());
 		Student s1 = new Student();
-		s1.setRollNo(100);
+		s1.setRollNo(101);
 		s1.setName("Alien Alien");
 		s1.setGpa(4);
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistenceUnitName");
